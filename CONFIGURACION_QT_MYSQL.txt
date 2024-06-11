@@ -1,0 +1,16 @@
+SET PATH=%PATH%;C:\Qt\Tools\mingw1120_64\bin;C:\Qt\Tools\CMake_64\bin;
+
+C:\Qt\6.7.0\Src\qtbase\src\plugins\sqldrivers
+
+call C:\Qt\6.7.0\mingw_64\bin\qt-cmake.bat -G "MinGW Makefiles" . -DMySQL_INCLUDE_DIR="C:\Program Files\MySQL\MySQL Server 8.4\include" -DMySQL_LIBRARY="C:\Program Files\MySQL\MySQL Server 8.4\lib\libmysql.lib" -DCMAKE_INSTALL_PREFIX="C:\Qt\6.7.0\mingw_64" -DCMAKE_C_COMPILER="gcc.exe" -DCMAKE_CXX_COMPILER="g++.exe"
+
+mingw32-make
+
+mingw32-make install
+
+pause
+
+
+
+
+

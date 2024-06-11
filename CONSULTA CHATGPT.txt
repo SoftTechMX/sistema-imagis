@@ -1,0 +1,6 @@
+Tengo este error al conectarme con Creator QT y MySQL:
+QList("QSQLITE", "QMIMER", "QMARIADB", "QMYSQL", "QODBC", "QPSQL")
+QSqlDatabase: QMYSQL driver not loaded
+QSqlDatabase: available drivers: QSQLITE QMIMER QMARIADB QMYSQL QODBC QPSQL
+ya revisé esta pagina también https://www.youtube.com/watch?v=7YIJUL9pz2U&t=19s y no logré solucionar
+quiero que te comportes como un experto en QT Creator y MySQL y me des por lo menos 5 posibles soluciones
