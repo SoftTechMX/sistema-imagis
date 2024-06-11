@@ -1,11 +1,14 @@
+#include "mainwindow.h"
 #include "flogin.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    fLogin w;
-    w.show();
-    return a.exec();
+    QApplication aplicacion(argc, argv);
+
+    fLogin ventanaLogin;
+    ventanaLogin.show();
+
+    return aplicacion.exec();
 }
