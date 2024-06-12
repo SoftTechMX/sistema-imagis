@@ -10,6 +10,14 @@ LIBS += `pkg-config --cflags --libs Qt5Widgets Qt5Sql`
 
 SOURCES += \
     MainWindow.cpp \
+    QSidePanel/PanelBottomSide.cpp \
+    QSidePanel/PanelLeftSide.cpp \
+    QSidePanel/PanelRightSide.cpp \
+    QSidePanel/PanelTopSide.cpp \
+    QSidePanel/SidePanel.cpp \
+    QSidePanel/SidePanelState.cpp \
+    QSidePanel/math.cpp \
+    QSidePanel/side_panel_helpers.cpp \
     fadministrador.cpp \
     fespecialista.cpp \
     flogin.cpp \
@@ -17,6 +25,14 @@ SOURCES += \
 
 HEADERS += \
     MainWindow.h \
+    QSidePanel/PanelBottomSide.hpp \
+    QSidePanel/PanelLeftSide.hpp \
+    QSidePanel/PanelRightSide.hpp \
+    QSidePanel/PanelTopSide.hpp \
+    QSidePanel/SidePanel.hpp \
+    QSidePanel/SidePanelState.hpp \
+    QSidePanel/math.hpp \
+    QSidePanel/side_panel_helpers.hpp \
     fadministrador.h \
     fespecialista.h \
     flogin.h
@@ -31,3 +47,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    q_side_panel.pri
