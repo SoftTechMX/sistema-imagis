@@ -20,7 +20,7 @@
 #include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class fLogin; }
+    namespace Ui { class fLogin; }
 QT_END_NAMESPACE
 
 class fLogin : public QMainWindow
