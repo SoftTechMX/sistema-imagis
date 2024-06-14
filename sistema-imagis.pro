@@ -9,39 +9,40 @@ LIBS += `pkg-config --cflags --libs Qt5Widgets Qt5Sql`
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Config.cpp \
+    FormCreateProducto.cpp \
+    FormCreateUsuario.cpp \
+    FormIndexProducto.cpp \
+    FormIndexUsuarios.cpp \
+    FormShowLicencia.cpp \
+    FormUpdateLicencia.cpp \
+    FormUpdateUsuario.cpp \
+    LoginWindow.cpp \
     MainWindow.cpp \
-    QSidePanel/PanelBottomSide.cpp \
-    QSidePanel/PanelLeftSide.cpp \
-    QSidePanel/PanelRightSide.cpp \
-    QSidePanel/PanelTopSide.cpp \
-    QSidePanel/SidePanel.cpp \
-    QSidePanel/SidePanelState.cpp \
-    QSidePanel/math.cpp \
-    QSidePanel/side_panel_helpers.cpp \
-    fadministrador.cpp \
-    fespecialista.cpp \
-    flogin.cpp \
     main.cpp
 
 HEADERS += \
-    MainWindow.h \
-    QSidePanel/PanelBottomSide.hpp \
-    QSidePanel/PanelLeftSide.hpp \
-    QSidePanel/PanelRightSide.hpp \
-    QSidePanel/PanelTopSide.hpp \
-    QSidePanel/SidePanel.hpp \
-    QSidePanel/SidePanelState.hpp \
-    QSidePanel/math.hpp \
-    QSidePanel/side_panel_helpers.hpp \
-    fadministrador.h \
-    fespecialista.h \
-    flogin.h
+    Config.h \
+    FormCreateProducto.h \
+    FormCreateUsuario.h \
+    FormIndexProducto.h \
+    FormIndexUsuarios.h \
+    FormShowLicencia.h \
+    FormUpdateLicencia.h \
+    FormUpdateUsuario.h \
+    LoginWindow.h \
+    MainWindow.h
 
 FORMS += \
-    MainWindow.ui \
-    flogin.ui \
-    fadministrador.ui \
-    fespecialista.ui \
+    FormCreateProducto.ui \
+    FormCreateUsuario.ui \
+    FormIndexProducto.ui \
+    FormIndexUsuarios.ui \
+    FormShowLicencia.ui \
+    FormUpdateLicencia.ui \
+    FormUpdateUsuario.ui \
+    LoginWindow.ui \
+    MainWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
