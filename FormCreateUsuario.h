@@ -1,7 +1,11 @@
 #include <QWidget>
+#include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QMessageBox>
+
+#include "Config.h"
 
 #ifndef FORMCREATEUSUARIO_H
 #define FORMCREATEUSUARIO_H
@@ -15,6 +19,7 @@ class FormCreateUsuario : public QWidget
     Q_OBJECT
 
     private:
+        Config config;
         Ui::FormCreateUsuario *ui;
 
     public:

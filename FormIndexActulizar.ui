@@ -43,7 +43,26 @@
     </spacer>
    </item>
    <item>
+    <widget class="QProgressBar" name="progressbar">
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QPushButton" name="pushButton">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="text">
       <string>Buscar Actualizaciones</string>
      </property>

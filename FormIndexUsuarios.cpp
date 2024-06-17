@@ -19,16 +19,32 @@ FormIndexUsuarios::FormIndexUsuarios(QWidget *parent) :
     ui->tabla_usuarios->setHorizontalHeaderLabels(titulos_columnas);
     ui->tabla_usuarios->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    QSqlDatabase conexion = QSqlDatabase::addDatabase("QMYSQL");
-    conexion.setHostName(this->config.DB_HOST);
-    conexion.setDatabaseName(this->config.DB_NAME);
-    conexion.setUserName(this->config.DB_USERNAME);
-    conexion.setPassword(this->config.DB_PASSWORD);
+    this->refresh_table();
+}
 
-    if(conexion.open())
+FormIndexUsuarios::~FormIndexUsuarios()
+{
+    delete ui;
+}
+
+
+void FormIndexUsuarios::on_btn_add_usaurio_clicked()
+{
+    this->window_create_usuario = new FormCreateUsuario();
+    this->window_create_usuario->show();
+}
+
+void FormIndexUsuarios::refresh_table()
+{
+    this->config.open_connection();
+
+    ui->tabla_usuarios->clearContents();
+    ui->tabla_usuarios->setRowCount(0);
+
+    if(this->config.db_conexion.open())
     {
         QSqlQuery query;
-        query.exec("SELECT * FROM usuarios");
+        query.exec("SELECT * FROM personal");
 
         int fila = ui->tabla_usuarios->rowCount() - 1;
 
@@ -36,11 +52,11 @@ FormIndexUsuarios::FormIndexUsuarios(QWidget *parent) :
 
             fila++;
 
-            QString nombres             = query.value(4).toString();
-            QString primer_apellido     = query.value(5).toString();
-            QString segundo_apellido    = query.value(6).toString();
-            QString fecha_de_nacimiento = query.value(7).toString();
-            QString sexo                = query.value(8).toString();
+            QString nombres             = query.value(6).toString();
+            QString primer_apellido     = query.value(7).toString();
+            QString segundo_apellido    = query.value(8).toString();
+            QString fecha_de_nacimiento = query.value(13).toString();
+            QString sexo                = query.value(9).toString();
 
             ui->tabla_usuarios->insertRow(fila);
             ui->tabla_usuarios->setItem(fila, 0, new QTableWidgetItem(nombres));
@@ -56,18 +72,8 @@ FormIndexUsuarios::FormIndexUsuarios(QWidget *parent) :
     }
 }
 
-FormIndexUsuarios::~FormIndexUsuarios()
+void FormIndexUsuarios::on_btn_refresh_clicked()
 {
-    delete ui;
-}
-
-
-void FormIndexUsuarios::on_btn_add_usaurio_clicked()
-{
-    if(this->window_create_usuario != nullptr)
-    {
-        this->window_create_usuario = new FormCreateUsuario();
-        this->window_create_usuario->show();
-    }
+    this->refresh_table();
 }
 

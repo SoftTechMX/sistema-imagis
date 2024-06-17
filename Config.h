@@ -1,4 +1,5 @@
 #include <QString>
+#include <QSqlDatabase>
 
 #ifndef CONFIG_H
 #define CONFIG_H
@@ -10,8 +11,11 @@ public:
     QString DB_NAME;
     QString DB_USERNAME;
     QString DB_PASSWORD;
+    QSqlDatabase db_conexion;
+
 public:
     Config();
+    void open_connection();
 };
 
 #endif // CONFIG_H

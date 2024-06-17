@@ -22,6 +22,7 @@
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 namespace Ui {
     class MainWindow;
 }

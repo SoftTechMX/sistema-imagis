@@ -18,13 +18,22 @@ FormIndexDispositivos::FormIndexDispositivos(QWidget *parent) :
     ui->tabla_dispositivos->setHorizontalHeaderLabels(titulos_columnas);
     ui->tabla_dispositivos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    QSqlDatabase conexion = QSqlDatabase::addDatabase("QMYSQL");
-    conexion.setHostName(this->config.DB_HOST);
-    conexion.setDatabaseName(this->config.DB_NAME);
-    conexion.setUserName(this->config.DB_USERNAME);
-    conexion.setPassword(this->config.DB_PASSWORD);
+    this->refresh_table();
+}
 
-    if(conexion.open())
+FormIndexDispositivos::~FormIndexDispositivos()
+{
+    delete ui;
+}
+
+void FormIndexDispositivos::refresh_table()
+{
+    this->config.open_connection();
+
+    ui->tabla_dispositivos->clearContents();
+    ui->tabla_dispositivos->setRowCount(0);
+
+    if(this->config.db_conexion.open())
     {
         QSqlQuery query;
         query.exec("SELECT * FROM dispositivos");
@@ -53,17 +62,15 @@ FormIndexDispositivos::FormIndexDispositivos(QWidget *parent) :
     }
 }
 
-FormIndexDispositivos::~FormIndexDispositivos()
-{
-    delete ui;
-}
-
 void FormIndexDispositivos::on_btn_agragar_dispositivo_clicked()
 {
-    if(this->window_create_dispositivo != nullptr)
-    {
-        this->window_create_dispositivo = new FormCreateDispositivo();
-        this->window_create_dispositivo->show();
-    }
+    this->window_create_dispositivo = new FormCreateDispositivo();
+    this->window_create_dispositivo->show();
+}
+
+
+void FormIndexDispositivos::on_btn_refresh_clicked()
+{
+    this->refresh_table();
 }
 

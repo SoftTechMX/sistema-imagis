@@ -30,14 +30,32 @@
     </widget>
    </item>
    <item>
-    <widget class="QTableWidget" name="tabla_recursos"/>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_add_recurso">
-     <property name="text">
-      <string>Agregar Recurso</string>
+    <widget class="QTableWidget" name="tabla_recursos">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_refresh">
+       <property name="text">
+        <string>Refrescar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_add_recurso">
+       <property name="text">
+        <string>Agregar Recurso</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

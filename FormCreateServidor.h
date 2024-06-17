@@ -1,7 +1,11 @@
 #include <QWidget>
+#include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QMessageBox>
+
+#include "Config.h"
 
 #ifndef FORMCREATESERVIDOR_H
 #define FORMCREATESERVIDOR_H
@@ -15,6 +19,7 @@ class FormCreateServidor : public QWidget
     Q_OBJECT
 
     private:
+        Config config;
         Ui::FormCreateServidor *ui;
 
     public:

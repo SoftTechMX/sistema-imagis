@@ -19,13 +19,23 @@ FormIndexServidores::FormIndexServidores(QWidget *parent) :
     ui->tabla_servidores->setHorizontalHeaderLabels(titulos_columnas);
     ui->tabla_servidores->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    QSqlDatabase conexion = QSqlDatabase::addDatabase("QMYSQL");
-    conexion.setHostName(this->config.DB_HOST);
-    conexion.setDatabaseName(this->config.DB_NAME);
-    conexion.setUserName(this->config.DB_USERNAME);
-    conexion.setPassword(this->config.DB_PASSWORD);
 
-    if(conexion.open())
+    this->refresh_table();
+}
+
+FormIndexServidores::~FormIndexServidores()
+{
+    delete ui;
+}
+
+void FormIndexServidores::refresh_table()
+{
+    this->config.open_connection();
+
+    ui->tabla_servidores->clearContents();
+    ui->tabla_servidores->setRowCount(0);
+
+    if(this->config.db_conexion.open())
     {
         QSqlQuery query;
         query.exec("SELECT * FROM servidores");
@@ -56,17 +66,15 @@ FormIndexServidores::FormIndexServidores(QWidget *parent) :
     }
 }
 
-FormIndexServidores::~FormIndexServidores()
-{
-    delete ui;
-}
-
 void FormIndexServidores::on_btn_add_servidor_clicked()
 {
-    if(this->window_create_servidor != nullptr)
-    {
-        this->window_create_servidor = new FormCreateServidor();
-        this->window_create_servidor->show();
-    }
+    this->window_create_servidor = new FormCreateServidor();
+    this->window_create_servidor->show();
+}
+
+
+void FormIndexServidores::on_btn_refresh_clicked()
+{
+    this->refresh_table();
 }
 

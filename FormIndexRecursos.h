@@ -6,8 +6,8 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 
-#include "Config.h"
 #include "FormCreateRecurso.h"
+#include "Config.h"
 
 #ifndef FORMINDEXRECURSOS_H
 #define FORMINDEXRECURSOS_H
@@ -21,15 +21,18 @@ class FormIndexRecursos : public QGroupBox
     Q_OBJECT
 
     private:
+        Config config;
         Ui::FormIndexRecursos *ui;
         FormCreateRecurso *window_create_recurso;
-        Config config;
 
     public:
         explicit FormIndexRecursos(QWidget *parent = nullptr);
         ~FormIndexRecursos();
-private slots:
+        void refresh();
+
+    private slots:
         void on_btn_add_recurso_clicked();
+        void on_btn_refresh_clicked();
 };
 
 #endif // FORMINDEXRECURSOS_H

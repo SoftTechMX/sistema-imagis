@@ -6,8 +6,8 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 
-#include "Config.h"
 #include "FormCreateModulo.h"
+#include "Config.h"
 
 #ifndef FORMINDEXMODULO_H
 #define FORMINDEXMODULO_H
@@ -21,16 +21,18 @@ class FormIndexModulos : public QGroupBox
     Q_OBJECT
 
     private:
+        Config config;
         Ui::FormIndexModulos *ui;
         FormCreateModulo *window_create_modulo;
-        Config config;
 
     public:
         explicit FormIndexModulos(QWidget *parent = nullptr);
         ~FormIndexModulos();
+        void refresh_table();
 
     private slots:
         void on_btn_add_modulo_clicked();
+        void on_btn_refresh_clicked();
 };
 
 #endif // FORMINDEXMODULO_H

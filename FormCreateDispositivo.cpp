@@ -15,10 +15,31 @@ FormCreateDispositivo::~FormCreateDispositivo()
 
 void FormCreateDispositivo::on_btn_save_clicked()
 {
-    if(this->db_conexion != nullptr && this->db_conexion->open())
+    this->config.open_connection();
+
+    QString marca   = ui->txt_marca->text();
+    QString modelo  = ui->txt_modelo->text();
+    QString tipo    = ui->txt_tipo_de_dispositivo->text();
+
+    if(this->config.db_conexion.open())
     {
-        this->close();
-        QMessageBox::information(this, "Success", "Se guardo la informacion correctamente.");
+        QSqlQuery query;
+        query.prepare("INSERT INTO dispositivos (tipo, marca, modelo) "
+                      "VALUES (:tipo, :marca, :modelo)");
+        query.bindValue(":tipo", tipo);
+        query.bindValue(":marca", marca);
+        query.bindValue(":modelo", modelo);
+
+        if( query.exec() )
+        {
+            QString mensaje = "Se ha agregado el dispositivo a la base de datos.";
+            QMessageBox::information(this, "Success", mensaje);
+        }
+        else
+        {
+            QSqlError error = query.lastError();
+            QMessageBox::critical(this, "Error", error.text());
+        }
     }
     else
     {

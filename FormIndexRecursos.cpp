@@ -16,13 +16,22 @@ FormIndexRecursos::FormIndexRecursos(QWidget *parent) :
     ui->tabla_recursos->setHorizontalHeaderLabels(titulos_columnas);
     ui->tabla_recursos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    QSqlDatabase conexion = QSqlDatabase::addDatabase("QMYSQL");
-    conexion.setHostName(this->config.DB_HOST);
-    conexion.setDatabaseName(this->config.DB_NAME);
-    conexion.setUserName(this->config.DB_USERNAME);
-    conexion.setPassword(this->config.DB_PASSWORD);
+    this->refresh();
+}
 
-    if(conexion.open())
+FormIndexRecursos::~FormIndexRecursos()
+{
+    delete ui;
+}
+
+void FormIndexRecursos::refresh()
+{
+    this->config.open_connection();
+
+    ui->tabla_recursos->clearContents();
+    ui->tabla_recursos->setRowCount(0);
+
+    if(this->config.db_conexion.open())
     {
         QSqlQuery query;
         query.exec("SELECT * FROM recursos");
@@ -33,8 +42,8 @@ FormIndexRecursos::FormIndexRecursos(QWidget *parent) :
 
             fila++;
 
-            QString tipo        = query.value(0).toString();
-            QString descripcion = query.value(1).toString();
+            QString tipo        = query.value(1).toString();
+            QString descripcion = query.value(2).toString();
 
             ui->tabla_recursos->insertRow(fila);
             ui->tabla_recursos->setItem(fila, 0, new QTableWidgetItem(tipo));
@@ -47,17 +56,15 @@ FormIndexRecursos::FormIndexRecursos(QWidget *parent) :
     }
 }
 
-FormIndexRecursos::~FormIndexRecursos()
-{
-    delete ui;
-}
-
 void FormIndexRecursos::on_btn_add_recurso_clicked()
 {
-    if(this->window_create_recurso != nullptr)
-    {
-        this->window_create_recurso = new FormCreateRecurso();
-        this->window_create_recurso->show();
-    }
+    this->window_create_recurso = new FormCreateRecurso();
+    this->window_create_recurso->show();
+}
+
+
+void FormIndexRecursos::on_btn_refresh_clicked()
+{
+    this->refresh();
 }
 

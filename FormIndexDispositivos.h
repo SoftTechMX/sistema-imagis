@@ -6,8 +6,8 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 
-#include "Config.h"
 #include "FormCreateDispositivo.h"
+#include "Config.h"
 
 #ifndef FORMINDEXDISPOSITIVOS_H
 #define FORMINDEXDISPOSITIVOS_H
@@ -20,20 +20,19 @@ class FormIndexDispositivos : public QGroupBox
 {
     Q_OBJECT
 
-    public:
-        QSqlDatabase *db_conexion;
-
     private:
+        Config config;
         Ui::FormIndexDispositivos *ui;
         FormCreateDispositivo *window_create_dispositivo;
-        Config config;
 
     public:
         explicit FormIndexDispositivos(QWidget *parent = nullptr);
         ~FormIndexDispositivos();
+        void refresh_table();
 
     private slots:
         void on_btn_agragar_dispositivo_clicked();
+        void on_btn_refresh_clicked();
 };
 
 #endif // FORMINDEXDISPOSITIVOS_H

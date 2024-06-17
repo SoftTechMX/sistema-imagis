@@ -1,7 +1,11 @@
 #include <QWidget>
+#include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QMessageBox>
+
+#include "Config.h"
 
 #ifndef FORMCREATEDISPOSITIVO_H
 #define FORMCREATEDISPOSITIVO_H
@@ -14,10 +18,8 @@ class FormCreateDispositivo : public QWidget
 {
     Q_OBJECT
 
-    public:
-        QSqlDatabase *db_conexion;
-
     private:
+        Config config;
         Ui::FormCreateDispositivo *ui;
 
     public:
