@@ -1,7 +1,10 @@
+#include <QGroupBox>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QMessageBox>
+
 #ifndef FORMSHOWLICENCIA_H
 #define FORMSHOWLICENCIA_H
-
-#include <QGroupBox>
 
 namespace Ui {
 class FormShowLicencia;

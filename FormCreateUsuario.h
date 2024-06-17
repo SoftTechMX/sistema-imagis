@@ -1,7 +1,10 @@
+#include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QMessageBox>
+
 #ifndef FORMCREATEUSUARIO_H
 #define FORMCREATEUSUARIO_H
-
-#include <QWidget>
 
 namespace Ui {
     class FormCreateUsuario;
@@ -11,12 +14,16 @@ class FormCreateUsuario : public QWidget
 {
     Q_OBJECT
 
-public:
-    explicit FormCreateUsuario(QWidget *parent = nullptr);
-    ~FormCreateUsuario();
+    private:
+        Ui::FormCreateUsuario *ui;
 
-private:
-    Ui::FormCreateUsuario *ui;
+    public:
+        explicit FormCreateUsuario(QWidget *parent = nullptr);
+        ~FormCreateUsuario();
+
+    private slots:
+        void on_btn_save_clicked();
+        void on_btn_cancel_clicked();
 };
 
 #endif // FORMCREATEUSUARIO_H

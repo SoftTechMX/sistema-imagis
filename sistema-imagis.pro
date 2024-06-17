@@ -10,37 +10,58 @@ LIBS += `pkg-config --cflags --libs Qt5Widgets Qt5Sql`
 
 SOURCES += \
     Config.cpp \
-    FormCreateProducto.cpp \
+    FormCreateDispositivo.cpp \
+    FormCreateModulo.cpp \
+    FormCreateRecurso.cpp \
     FormCreateUsuario.cpp \
-    FormIndexProducto.cpp \
+    FormCreateServidor.cpp \
+    FormIndexActulizar.cpp \
+    FormIndexConfiguracion.cpp \
+    FormIndexDispositivos.cpp \
+    FormIndexModulo.cpp \
+    FormIndexRecursos.cpp \
+    FormIndexServidores.cpp \
     FormIndexUsuarios.cpp \
     FormShowLicencia.cpp \
     FormUpdateLicencia.cpp \
-    FormUpdateUsuario.cpp \
     LoginWindow.cpp \
     MainWindow.cpp \
     main.cpp
 
 HEADERS += \
     Config.h \
-    FormCreateProducto.h \
+    FormCreateDispositivo.h \
+    FormCreateModulo.h \
+    FormCreateRecurso.h \
     FormCreateUsuario.h \
-    FormIndexProducto.h \
+    FormCreateServidor.h \
+    FormIndexActulizar.h \
+    FormIndexConfiguracion.h \
+    FormIndexDispositivos.h \
+    FormIndexModulo.h \
+    FormIndexRecursos.h \
+    FormIndexServidores.h \
     FormIndexUsuarios.h \
     FormShowLicencia.h \
     FormUpdateLicencia.h \
-    FormUpdateUsuario.h \
     LoginWindow.h \
     MainWindow.h
 
 FORMS += \
-    FormCreateProducto.ui \
+    FormCreateDispositivo.ui \
+    FormCreateModulo.ui \
+    FormCreateRecurso.ui \
+    FormCreateServidor.ui \
     FormCreateUsuario.ui \
-    FormIndexProducto.ui \
+    FormIndexActulizar.ui \
+    FormIndexConfiguracion.ui \
+    FormIndexDispositivos.ui \
+    FormIndexModulos.ui \
+    FormIndexRecursos.ui \
+    FormIndexServidores.ui \
     FormIndexUsuarios.ui \
     FormShowLicencia.ui \
     FormUpdateLicencia.ui \
-    FormUpdateUsuario.ui \
     LoginWindow.ui \
     MainWindow.ui
 

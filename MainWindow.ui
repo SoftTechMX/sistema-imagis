@@ -40,14 +40,15 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuGeneral">
+   <widget class="QMenu" name="menu_general">
     <property name="title">
      <string>General</string>
     </property>
     <addaction name="action_gestion_de_usuarios"/>
-    <addaction name="action_gestion_de_productos"/>
+    <addaction name="action_gestion_de_dispositivo"/>
+    <addaction name="action_gestion_de_recursos"/>
    </widget>
-   <widget class="QMenu" name="menuNodos_DICOM">
+   <widget class="QMenu" name="menu_nodos_DICOM">
     <property name="title">
      <string>Nodos DICOM</string>
     </property>
@@ -55,32 +56,40 @@
     <addaction name="action_configuracion_imagis"/>
     <addaction name="action_modulos_imagis"/>
    </widget>
-   <widget class="QMenu" name="menuLicencia">
+   <widget class="QMenu" name="menu_licencia">
     <property name="title">
      <string>Licencia</string>
     </property>
     <addaction name="action_registrar_licencia"/>
     <addaction name="action_consultar_estatus"/>
    </widget>
-   <widget class="QMenu" name="menuAyuda">
+   <widget class="QMenu" name="menu_actualizacion">
+    <property name="title">
+     <string>Actualizacion</string>
+    </property>
+    <addaction name="action_actualizar_software"/>
+   </widget>
+   <widget class="QMenu" name="menu_reportes">
+    <property name="title">
+     <string>Reportes</string>
+    </property>
+    <addaction name="action_reporte_general"/>
+    <addaction name="action_reporte_especifico"/>
+   </widget>
+   <widget class="QMenu" name="menu_ayuda">
     <property name="title">
      <string>Ayuda</string>
     </property>
-    <addaction name="action_reporte"/>
-    <addaction name="action_actualizar_software"/>
     <addaction name="action_documentacion"/>
    </widget>
-   <addaction name="menuGeneral"/>
-   <addaction name="menuNodos_DICOM"/>
-   <addaction name="menuLicencia"/>
-   <addaction name="menuAyuda"/>
+   <addaction name="menu_general"/>
+   <addaction name="menu_nodos_DICOM"/>
+   <addaction name="menu_licencia"/>
+   <addaction name="menu_actualizacion"/>
+   <addaction name="menu_reportes"/>
+   <addaction name="menu_ayuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_reporte">
-   <property name="text">
-    <string>Reportes</string>
-   </property>
-  </action>
   <action name="action_actualizar_software">
    <property name="text">
     <string>Actualizar Software</string>
@@ -91,59 +100,14 @@
     <string>Documentacion</string>
    </property>
   </action>
-  <action name="action_registrar_licencia">
-   <property name="text">
-    <string>Registrar Licencia</string>
-   </property>
-  </action>
-  <action name="action_consultar_estatus">
-   <property name="text">
-    <string>Consultar Estatus</string>
-   </property>
-  </action>
-  <action name="action_servidores">
-   <property name="text">
-    <string>Servidores</string>
-   </property>
-  </action>
-  <action name="action_configuracion_imagis">
-   <property name="text">
-    <string>configuracion IMAGIS</string>
-   </property>
-  </action>
-  <action name="action_modulos_imagis">
-   <property name="text">
-    <string>Modulos IMAGIS</string>
-   </property>
-  </action>
-  <action name="action_gestion_de_recusros">
+  <action name="action_gestion_de_recursos">
    <property name="text">
     <string>Gestion de Recursos</string>
    </property>
   </action>
-  <action name="actionNuevo">
+  <action name="action_gestion_de_dispositivo">
    <property name="text">
-    <string>Nuevo</string>
-   </property>
-  </action>
-  <action name="action_lista_de_usuarios">
-   <property name="text">
-    <string>Lista de Usuarios</string>
-   </property>
-  </action>
-  <action name="action_agregar_usuario">
-   <property name="text">
-    <string>Agregar  Usuario</string>
-   </property>
-  </action>
-  <action name="actionLista_de_Productos">
-   <property name="text">
-    <string>Lista de Productos</string>
-   </property>
-  </action>
-  <action name="actionAgregar_Producto">
-   <property name="text">
-    <string>Agregar Producto</string>
+    <string>Gestion De Dispositivos</string>
    </property>
   </action>
   <action name="action_gestion_de_usuarios">
@@ -151,9 +115,54 @@
     <string>Gestion de Usuarios</string>
    </property>
   </action>
-  <action name="action_gestion_de_productos">
+  <action name="action_gestion_de_recusros">
    <property name="text">
-    <string>Gestion De Productos</string>
+    <string>Gestion de Recursos</string>
+   </property>
+  </action>
+  <action name="action_modulos_imagis">
+   <property name="text">
+    <string>Modulos IMAGIS</string>
+   </property>
+  </action>
+  <action name="action_configuracion_imagis">
+   <property name="text">
+    <string>configuracion IMAGIS</string>
+   </property>
+  </action>
+  <action name="action_servidores">
+   <property name="text">
+    <string>Servidores</string>
+   </property>
+  </action>
+  <action name="action_consultar_estatus">
+   <property name="text">
+    <string>Consultar Estatus</string>
+   </property>
+  </action>
+  <action name="action_registrar_licencia">
+   <property name="text">
+    <string>Registrar Licencia</string>
+   </property>
+  </action>
+  <action name="action_reporte">
+   <property name="text">
+    <string>Reportes</string>
+   </property>
+  </action>
+  <action name="action_lista_de_usuarios">
+   <property name="text">
+    <string>Lista de Usuarios</string>
+   </property>
+  </action>
+  <action name="action_reporte_general">
+   <property name="text">
+    <string>Reporte General</string>
+   </property>
+  </action>
+  <action name="action_reporte_especifico">
+   <property name="text">
+    <string>Reporte Especifico</string>
    </property>
   </action>
  </widget>

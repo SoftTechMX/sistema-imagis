@@ -52,7 +52,7 @@ FormIndexUsuarios::FormIndexUsuarios(QWidget *parent) :
     }
     else
     {
-        QMessageBox::information(this, "Error", "");
+        QMessageBox::information(this, "Error", "No se pudo establecer una conexion con la base de datos");
     }
 }
 
@@ -62,7 +62,7 @@ FormIndexUsuarios::~FormIndexUsuarios()
 }
 
 
-void FormIndexUsuarios::on_btn_create_usuario_clicked()
+void FormIndexUsuarios::on_btn_add_usaurio_clicked()
 {
     if(this->window_create_usuario != nullptr)
     {

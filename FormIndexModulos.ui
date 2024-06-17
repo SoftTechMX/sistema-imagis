@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FormIndexUsuarios</class>
- <widget class="QGroupBox" name="FormIndexUsuarios">
+ <class>FormIndexModulos</class>
+ <widget class="QGroupBox" name="FormIndexModulos">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>711</width>
-    <height>559</height>
+    <width>447</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Usuarios</string>
+      <string>Modulos</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -30,12 +30,12 @@
     </widget>
    </item>
    <item>
-    <widget class="QTableWidget" name="tabla_usuarios"/>
+    <widget class="QTableWidget" name="tabla_modulos"/>
    </item>
    <item>
-    <widget class="QPushButton" name="btn_add_usaurio">
+    <widget class="QPushButton" name="btn_add_modulo">
      <property name="text">
-      <string>Agregar Usuario</string>
+      <string>Agregar Modulo</string>
      </property>
     </widget>
    </item>

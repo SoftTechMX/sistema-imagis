@@ -2,6 +2,7 @@
 #include <QTableWidget>
 #include <QString>
 #include <QStringList>
+#include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
 
@@ -18,6 +19,7 @@ namespace Ui {
 class FormIndexUsuarios : public QGroupBox
 {
     Q_OBJECT
+
     private:
         Ui::FormIndexUsuarios *ui;
         FormCreateUsuario *window_create_usuario;
@@ -28,7 +30,7 @@ class FormIndexUsuarios : public QGroupBox
         ~FormIndexUsuarios();
 
     private slots:
-        void on_btn_create_usuario_clicked();
+        void on_btn_add_usaurio_clicked();
 };
 
 #endif // FORMINDEXUSUARIOS_H

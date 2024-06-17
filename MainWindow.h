@@ -8,7 +8,13 @@
 #include <QDebug>
 
 #include "FormIndexUsuarios.h"
-#include "FormIndexProducto.h"
+#include "FormIndexDispositivos.h"
+#include "FormIndexRecursos.h"
+#include "FormIndexServidores.h"
+#include "FormIndexModulo.h"
+#include "FormIndexConfiguracion.h"
+#include "FormIndexActulizar.h"
+
 #include "FormUpdateLicencia.h"
 #include "FormShowLicencia.h"
 
@@ -33,20 +39,23 @@ class MainWindow : public QMainWindow
         explicit MainWindow(QWidget *parent = nullptr);
         ~MainWindow();
 
-    private:
-        void limpiar_vista_actual();
-
-    private slots:
+private slots:
         void on_action_gestion_de_usuarios_triggered();
-        void on_action_reporte_triggered();
-        void on_action_actualizar_software_triggered();
-        void on_action_documentacion_triggered();
+        void on_action_gestion_de_dispositivo_triggered();
+        void on_action_gestion_de_recursos_triggered();
+        void on_action_modulos_imagis_triggered();
+        void on_action_configuracion_imagis_triggered();
+        void on_action_servidores_triggered();
         void on_action_registrar_licencia_triggered();
         void on_action_consultar_estatus_triggered();
-        void on_action_servidores_triggered();
-        void on_action_configuracion_imagis_triggered();
-        void on_action_modulos_imagis_triggered();
-        void on_action_gestion_de_productos_triggered();
+
+        void on_action_reporte_general_triggered();
+        void on_action_reporte_especifico_triggered();
+        void on_action_documentacion_triggered();
+        void on_action_actualizar_software_triggered();
+
+private:
+        void limpiar_vista_actual();
 };
 
 #endif // MAINWINDOW_H

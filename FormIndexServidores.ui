@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FormIndexUsuarios</class>
- <widget class="QGroupBox" name="FormIndexUsuarios">
+ <class>FormIndexServidores</class>
+ <widget class="QGroupBox" name="FormIndexServidores">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>711</width>
-    <height>559</height>
+    <width>435</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Usuarios</string>
+      <string>Servidores</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -30,12 +30,12 @@
     </widget>
    </item>
    <item>
-    <widget class="QTableWidget" name="tabla_usuarios"/>
+    <widget class="QTableWidget" name="tabla_servidores"/>
    </item>
    <item>
-    <widget class="QPushButton" name="btn_add_usaurio">
+    <widget class="QPushButton" name="btn_add_servidor">
      <property name="text">
-      <string>Agregar Usuario</string>
+      <string>Agregar Servidor</string>
      </property>
     </widget>
    </item>

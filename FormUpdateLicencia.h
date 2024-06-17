@@ -1,7 +1,9 @@
+#include <QGroupBox>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+
 #ifndef FORMUPDATELICENCIA_H
 #define FORMUPDATELICENCIA_H
-
-#include <QGroupBox>
 
 namespace Ui {
 class FormUpdateLicencia;

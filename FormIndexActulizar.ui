@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FormIndexProducto</class>
- <widget class="QGroupBox" name="FormIndexProducto">
+ <class>FormIndexActulizar</class>
+ <widget class="QGroupBox" name="FormIndexActulizar">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -22,7 +22,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Lista de Productos</string>
+      <string>Actualizacion</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -34,24 +34,18 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>20</height>
+       <height>40</height>
       </size>
      </property>
     </spacer>
    </item>
    <item>
-    <widget class="QTableWidget" name="tableWidget"/>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btn_create_producto">
+    <widget class="QPushButton" name="pushButton">
      <property name="text">
-      <string>Nuevo Producto</string>
+      <string>Buscar Actualizaciones</string>
      </property>
     </widget>
    </item>

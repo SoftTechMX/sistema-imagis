@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>370</width>
-    <height>313</height>
+    <width>406</width>
+    <height>444</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -44,55 +44,55 @@
    </item>
    <item>
     <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Nombres</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="txt_nombres"/>
      </item>
-     <item row="1" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>Primer Apellido</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="txt_apellido1"/>
      </item>
-     <item row="2" column="0">
+     <item row="4" column="0">
       <widget class="QLabel" name="label_4">
        <property name="text">
         <string>Segundo Apellido</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_3"/>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="txt_apeillido2"/>
      </item>
-     <item row="3" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
         <string>Fecha Nacimiento</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QDateEdit" name="dateEdit"/>
+     <item row="5" column="1">
+      <widget class="QDateEdit" name="txt_fehca_nacimeinto"/>
      </item>
-     <item row="4" column="0">
+     <item row="8" column="0">
       <widget class="QLabel" name="label_6">
        <property name="text">
         <string>Sexo</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
-      <widget class="QComboBox" name="comboBox">
+     <item row="8" column="1">
+      <widget class="QComboBox" name="combobox_sexo">
        <item>
         <property name="text">
          <string>Masculino</string>
@@ -104,6 +104,46 @@
         </property>
        </item>
       </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Telefono:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="txt_telefono"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Carnet de Identidad</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="txt_ci"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Usuario</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="txt_usuario"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="txt_password"/>
      </item>
     </layout>
    </item>
@@ -117,7 +157,7 @@
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>0</width>
+       <width>20</width>
        <height>20</height>
       </size>
      </property>
@@ -126,7 +166,14 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="btn_guardar_usuario">
+      <widget class="QPushButton" name="btn_cancel">
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_save">
        <property name="text">
         <string>Guardar Usuario</string>
        </property>

@@ -44,21 +44,53 @@ void MainWindow::on_action_gestion_de_usuarios_triggered()
 }
 
 
-void MainWindow::on_action_reporte_triggered()
+void MainWindow::on_action_gestion_de_dispositivo_triggered()
 {
     this->limpiar_vista_actual();
+
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widgets_frame->layout());
+    this->vista = new FormIndexDispositivos(ui->widgets_frame);
+    layout->addWidget(vista);
 }
 
 
-void MainWindow::on_action_actualizar_software_triggered()
+void MainWindow::on_action_gestion_de_recursos_triggered()
 {
     this->limpiar_vista_actual();
+
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widgets_frame->layout());
+    this->vista = new FormIndexRecursos(ui->widgets_frame);
+    layout->addWidget(vista);
 }
 
 
-void MainWindow::on_action_documentacion_triggered()
+void MainWindow::on_action_modulos_imagis_triggered()
 {
     this->limpiar_vista_actual();
+
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widgets_frame->layout());
+    this->vista = new FormIndexModulos(ui->widgets_frame);
+    layout->addWidget(vista);
+}
+
+
+void MainWindow::on_action_configuracion_imagis_triggered()
+{
+    this->limpiar_vista_actual();
+
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widgets_frame->layout());
+    this->vista = new FormIndexConfiguracion(ui->widgets_frame);
+    layout->addWidget(vista);
+}
+
+
+void MainWindow::on_action_servidores_triggered()
+{
+    this->limpiar_vista_actual();
+
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widgets_frame->layout());
+    this->vista = new FormIndexServidores(ui->widgets_frame);
+    layout->addWidget(vista);
 }
 
 
@@ -82,29 +114,30 @@ void MainWindow::on_action_consultar_estatus_triggered()
 }
 
 
-void MainWindow::on_action_servidores_triggered()
+void MainWindow::on_action_reporte_general_triggered()
 {
-    this->limpiar_vista_actual();
+
 }
 
 
-void MainWindow::on_action_configuracion_imagis_triggered()
+void MainWindow::on_action_reporte_especifico_triggered()
 {
-    this->limpiar_vista_actual();
+
 }
 
 
-void MainWindow::on_action_modulos_imagis_triggered()
+void MainWindow::on_action_documentacion_triggered()
 {
-    this->limpiar_vista_actual();
+
 }
 
 
-void MainWindow::on_action_gestion_de_productos_triggered()
+void MainWindow::on_action_actualizar_software_triggered()
 {
     this->limpiar_vista_actual();
 
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widgets_frame->layout());
-    this->vista = new FormIndexProducto(ui->widgets_frame);
+    this->vista = new FormIndexActulizar(ui->widgets_frame);
     layout->addWidget(vista);
 }
+
