@@ -72,3 +72,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     q_side_panel.pri
+
+RESOURCES += \
+    logo.qrc

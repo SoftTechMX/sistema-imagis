@@ -21,16 +21,12 @@ LoginWindow::~LoginWindow()
 
 void LoginWindow::on_btn_iniciar_sesion_clicked()
 {
-    QSqlDatabase conexion = QSqlDatabase::addDatabase("QMYSQL");
-    conexion.setHostName(this->config.DB_HOST);
-    conexion.setDatabaseName(this->config.DB_NAME);
-    conexion.setUserName(this->config.DB_USERNAME);
-    conexion.setPassword(this->config.DB_PASSWORD);
+    this->config.open_connection();
 
     QString usuario  = ui->usuario->text();
     QString password = ui->password->text();
 
-    if(conexion.open())
+    if(this->config.db_conexion.open())
     {
         QSqlQuery query;
         query.prepare("SELECT * FROM usuarios WHERE username = :usuario AND password = :password");
