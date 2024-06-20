@@ -101,7 +101,7 @@ height: 50px;
        <string notr="true">color: white;</string>
       </property>
       <property name="text">
-       <string>Autentificacion</string>
+       <string>Autentificacion de Usuario</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
